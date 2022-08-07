@@ -3,7 +3,7 @@
   A Complementary Reimagined edit 
   
 ## :link: Links
-* **[Download](https://download-link-here.com) the latest release here!**
+* **[Download](https://github.com/isuewo/OverimaginedShaders/releases/download/r1.0/OverimaginedShaders_r1.2.1-1.0.zip) the latest release here!**
 * Join the [Complementary Discord](https://discord.gg/A6faFYt) to get support and interact with the community! You can find us in the "overimagined" thread under #shader-general.
 * [YouTube Trailer](https://www.youtube.com/watch?v=tJBoYaol3f4) of Overimagined Shader
 
