@@ -92,6 +92,10 @@ vec4 GetVolumetricLight(inout float vlFactor, vec3 translucentMult, float lViewP
 			vec3 playerPos = wpos.xyz / wpos.w;
 			vec4 enderBeamSample = vec4(DrawEnderBeams(VdotU, playerPos), 1.0) / sampleCount;
 		#endif
+		#if defined OVERWORLD && defined OVERWORLD_BEAMS
+			vec3 playerPos = wpos.xyz / wpos.w;
+			vec4 overworldBeamSample = vec4(DrawOverworldBeams(VdotU, playerPos), 1.0) / 1.0;
+		#endif
 		wpos = shadowModelView * wpos;
 		wpos = shadowProjection * wpos;
 		wpos /= wpos.w;
@@ -126,7 +130,11 @@ vec4 GetVolumetricLight(inout float vlFactor, vec3 translucentMult, float lViewP
 		if (currentDist > depth0) vlSample *= translucentMult;
 
 		#ifdef OVERWORLD
-			volumetricLight += vec4(vlSample, shadowSample) * sampleMult;
+			#ifdef OVERWORLD_BEAMS
+				volumetricLight += vec4(vlSample, shadowSample) * overworldBeamSample * sampleMult;
+			#else
+				volumetricLight += vec4(vlSample, shadowSample) * sampleMult;
+			#endif
 		#else
 			volumetricLight += vec4(vlSample, shadowSample) * enderBeamSample;
 		#endif

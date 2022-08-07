@@ -1,7 +1,5 @@
-const float cloudNarrowness = 0.05;
-
 #ifdef DEFERRED1
-    const float cloudRoundness = 0.125; // for clouds
+    const float cloudRoundness = 0.125; // for clouds 0.125
 #else
     const float cloudRoundness = 0.35; // for cloud shadows
 #endif
@@ -17,8 +15,8 @@ vec2 GetRoundedCloudCoord(vec2 pos) { // Thanks to SixthSurge
 }
 
 vec3 ModifyTracePos(vec3 tracePos, float cloudAltitude) {
-    tracePos.x += syncedTime;
+    tracePos.x += syncedTime * CLOUD_SPEED;
     tracePos.z += cloudAltitude * 64.0;
-    tracePos.xz *= cloudNarrowness;
+    tracePos.xz *= CLOUD_WIDTH;
     return tracePos.xyz;
 }

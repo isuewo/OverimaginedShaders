@@ -55,6 +55,8 @@ if (pos.z < 0.9999) {
 if (reflection.a < 1.0) {
     #ifdef OVERWORLD
         vec3 skyReflection = GetSky(RVdotU, RVdotS, dither, false, true) * skyLightFactor;
+    // #elif defined OVERWORLD && defined OVERWORLD_BEAMS
+    //     vec3 skyReflection = GetSky(RVdotU, RVdotS, dither, false, true) * DrawOverworldBeams(RVdotU, planePos) * skyLightFactor;
     #elif defined END
         vec3 skyReflection = (endSkyColor + 0.4 * DrawEnderBeams(RVdotU, playerPos)) * skyLightFactor;
     #else

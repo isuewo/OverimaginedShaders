@@ -16,7 +16,7 @@
     vec3 dayMiddleSkyColor = mix(noonMiddleSkyColor, sunsetMiddleSkyColor, invNoonFactor) * mix(vec3(1.0), vec3(0.6, 0.65, 0.8) * 0.6, rainFactor);
     vec3 dayDownSkyColor   = mix(noonDownSkyColor, sunsetDownSkyColor * 0.5, invNoonFactor);
 
-    vec3 nightColFactor      = mix(vec3(0.07, 0.14, 0.24), vec3(0.04, 0.06, 0.12) * 0.6, rainFactor);
+    vec3 nightColFactor      = mix(vec3(0.07, 0.14, 0.24), vec3(0.04, 0.06, 0.12) * 0.6, rainFactor) * NIGHT_BRIGHTNESS;
     vec3 nightUpSkyColor     = pow(nightColFactor + skyColor, vec3(0.90)) * 0.4;
     vec3 nightMiddleSkyColor = pow(nightUpSkyColor, vec3(0.75)) * 1.3;
     vec3 nightDownSkyColor   = nightUpSkyColor * 1.3;

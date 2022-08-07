@@ -306,7 +306,7 @@ if (mat < 10512) {
                         }
                     } else {
                         if (mat < 10152) {
-                            if (mat == 10144) { // Warped Nylium, Warped Wart Block
+                            if (mat == 10144) { // Warped Nylium
                                 if (color.g == color.b && color.g > 0.0001) { // Warped Nylium:Netherrack Part
                                     #include "/lib/materials/specificMaterials/netherrack.glsl"
                                 } else { // Warped Nylium:Nylium Part, Warped Wart Block
@@ -318,7 +318,20 @@ if (mat < 10512) {
                                     #endif
                                 }
                             }
-                            else /*if (mat == 10148)*/ { // Crimson Nylium, Nether Wart Block
+                            if (mat == 10146) { // Warped Wart Block
+                                    smoothnessG = color.g * 0.5;
+                                    smoothnessD = smoothnessG;
+                                    
+                                    #ifdef GLOWING_WART
+                                        float animation = abs(sin(frameTimeCounter * 0.75)-1.0);
+                                        emission = pow(float(color.g - color.b), 3.0) * 30.0 * animation;
+                                    #endif
+
+                                    #ifdef COATED_TEXTURES
+                                        noiseFactor = 0.77;
+                                    #endif
+                            }
+                            if (mat == 10148) { // Crimson Nylium
                                 if (color.g == color.b && color.g > 0.0001 && color.r < 0.522) { // Crimson Nylium:Netherrack Part
                                     #include "/lib/materials/specificMaterials/netherrack.glsl"
                                 } else { // Crimson Nylium:Nylium Part, Nether Wart Block
@@ -329,6 +342,24 @@ if (mat < 10512) {
                                         noiseFactor = 0.77;
                                     #endif
                                 }
+                            }
+                            if (mat == 10150) { // Nether Wart Block
+                                    smoothnessG = color.r * 0.5;
+                                    smoothnessD = smoothnessG;
+
+                                   #ifdef GLOWING_WART
+                                        float animation = abs(sin(frameTimeCounter * 0.75)-1.0);
+                                        // emission = pow(float(color.r - color.g), 7.5) * 50.0 * animation;
+                                        if (color.r > 0.21) {
+                                    emission = 2.0 * color.g * animation;
+                                    color.r *= 1.2;
+                                }
+                                        pow2(max0(color.g - color.r)) * 2.0;
+                                    #endif
+
+                                    #ifdef COATED_TEXTURES
+                                        noiseFactor = 0.77;
+                                    #endif
                             }
                         } else {
                             if (mat == 10152) { // Cobblestone+, Mossy Cobblestone+, Furnace:Unlit, Smoker:Unlit, Blast Furnace:Unlit, Moss Block+, Lodestone, Lever, Piston, Sticky Piston, Dispenser, Dropper
@@ -549,8 +580,14 @@ if (mat < 10512) {
                                 #endif
                                 
                                 #if GLOWING_ORES >= 2
-                                    emission = pow2(color.g * 6.0);
-                                    color.rgb *= color.rgb;
+                                    #ifdef GLOWING_DEBRIS
+                                        emission = pow2(color.g * 6.0) * ORE_EMISSION;
+                                        color.rgb *= color.rgb;
+                                        #ifdef SITUATIONAL_ORES
+                                            float skyLightFactor = pow2(1.0 - min1(lmCoord.y * 2.9));
+                                            emission *= skyLightFactor;
+                                        #endif
+                                    #endif
                                 #endif
                             }
                         }
@@ -588,10 +625,17 @@ if (mat < 10512) {
                                 if (color.r != color.g) { // Iron Ore:Raw Iron Part
                                     #include "/lib/materials/specificMaterials/rawIronBlock.glsl"
                                     #if GLOWING_ORES >= 1
-                                        if (color.r - color.b > 0.15) {
-                                            emission = color.r * 1.5;
-                                            color.rgb *= color.rgb;
-                                        }
+                                        #ifdef GLOWING_IRON
+                                            if (color.r - color.b > 0.15) {
+                                                emission = color.r * 1.5 * ORE_EMISSION;
+                                                color.rgb *= color.rgb;
+                                            }
+                                            #ifdef SITUATIONAL_ORES
+                                                float skyLightFactor = pow2(1.0 - min1(lmCoord.y * 1.9));
+                                                emission = color.r * 1.5 * ORE_EMISSION;
+                                                emission *= skyLightFactor;
+                                            #endif
+                                        #endif
                                     #endif
                                 } else { // Iron Ore:Stone Part
                                     #include "/lib/materials/specificMaterials/stone.glsl"
@@ -601,10 +645,16 @@ if (mat < 10512) {
                                 if (color.r != color.g) { // Deepslate Iron Ore:Raw Iron Part
                                     #include "/lib/materials/specificMaterials/rawIronBlock.glsl"
                                     #if GLOWING_ORES >= 1
-                                        if (color.r - color.b > 0.15) {
-                                            emission = color.r * 1.5;
-                                            color.rgb *= color.rgb;
-                                        }
+                                        #ifdef GLOWING_IRON
+                                            if (color.r - color.b > 0.15) {
+                                                emission = color.r * 1.5 * ORE_EMISSION;
+                                                color.rgb *= color.rgb;
+                                            }
+                                            #ifdef SITUATIONAL_ORES
+                                                float skyLightFactor = pow2(1.0 - min1(lmCoord.y * 2.9));
+                                                emission *= skyLightFactor;
+                                            #endif
+                                        #endif
                                     #endif
                                 } else { // Deepslate Iron Ore:Deepslate Part
                                     #include "/lib/materials/specificMaterials/deepslate.glsl"
@@ -618,10 +668,16 @@ if (mat < 10512) {
                                 if (color.r != color.g) { // Copper Ore:Raw Copper Part
                                     #include "/lib/materials/specificMaterials/rawCopperBlock.glsl"
                                     #if GLOWING_ORES >= 1
-                                        if (max(color.r * 0.5, color.g) - color.b > 0.05) {
-                                            emission = color.r * 2.0 + 0.5;
-                                            color.rgb *= color.rgb;
-                                        }
+                                        #ifdef GLOWING_COPPER
+                                            if (max(color.r * 0.5, color.g) - color.b > 0.05) {
+                                                emission = (color.r * 2.0 + 0.5) * ORE_EMISSION;
+                                                color.rgb *= color.rgb;
+                                            }
+                                            #ifdef SITUATIONAL_ORES
+                                                float skyLightFactor = pow2(1.0 - min1(lmCoord.y * 2.9));
+                                                emission *= skyLightFactor;
+                                            #endif
+                                        #endif
                                     #endif
                                 } else { // Copper Ore:Stone Part
                                     #include "/lib/materials/specificMaterials/stone.glsl"
@@ -636,10 +692,16 @@ if (mat < 10512) {
                                 if (color.r != color.g) { // Deepslate Copper Ore:Raw Copper Part
                                     #include "/lib/materials/specificMaterials/rawCopperBlock.glsl"
                                     #if GLOWING_ORES >= 1
-                                        if (max(color.r * 0.5, color.g) - color.b > 0.05) {
-                                            emission = color.r * 2.0 + 0.5;
-                                            color.rgb *= color.rgb;
-                                        }
+                                        #ifdef GLOWING_COPPER
+                                            if (max(color.r * 0.5, color.g) - color.b > 0.05) {
+                                                emission = (color.r * 2.0 + 0.5) * ORE_EMISSION;
+                                                color.rgb *= color.rgb;
+                                            }
+                                            #ifdef SITUATIONAL_ORES
+                                                float skyLightFactor = pow2(1.0 - min1(lmCoord.y * 2.9));
+                                                emission *= skyLightFactor;
+                                            #endif
+                                        #endif
                                     #endif
                                 } else { // Deepslate Copper Ore:Deepslate Part
                                     #include "/lib/materials/specificMaterials/deepslate.glsl"
@@ -664,10 +726,16 @@ if (mat < 10512) {
                                 if (color.r != color.g || color.r > 0.99) { // Gold Ore:Raw Gold Part
                                     #include "/lib/materials/specificMaterials/rawGoldBlock.glsl"
                                     #if GLOWING_ORES >= 1
-                                        if (color.g - color.b > 0.15) {
-                                            emission = color.r + 1.0;
-                                            color.rgb *= color.rgb;
-                                        }
+                                        #ifdef GLOWING_GOLD
+                                            if (color.g - color.b > 0.15) {
+                                                emission = (color.r + 1.0) * ORE_EMISSION;
+                                                color.rgb *= color.rgb;
+                                            }
+                                            #ifdef SITUATIONAL_ORES
+                                                float skyLightFactor = pow2(1.0 - min1(lmCoord.y * 2.9));
+                                                emission *= skyLightFactor;
+                                            #endif
+                                        #endif
                                     #endif
                                 } else { // Gold Ore:Stone Part
                                     #include "/lib/materials/specificMaterials/stone.glsl"
@@ -680,10 +748,16 @@ if (mat < 10512) {
                                 if (color.r != color.g || color.r > 0.99) { // Deepslate Gold Ore:Raw Gold Part
                                     #include "/lib/materials/specificMaterials/rawGoldBlock.glsl"
                                     #if GLOWING_ORES >= 1
-                                        if (color.g - color.b > 0.15) {
-                                            emission = color.r + 1.0;
-                                            color.rgb *= color.rgb;
-                                        }
+                                        #ifdef GLOWING_GOLD
+                                            if (color.g - color.b > 0.15) {
+                                                emission = (color.r + 1.0) * ORE_EMISSION;
+                                                color.rgb *= color.rgb;
+                                            }
+                                            #ifdef SITUATIONAL_ORES
+                                                float skyLightFactor = pow2(1.0 - min1(lmCoord.y * 2.9));
+                                                emission *= skyLightFactor;
+                                            #endif
+                                        #endif
                                     #endif
                                 } else { // Deepslate Gold Ore:Deepslate Part
                                     #include "/lib/materials/specificMaterials/deepslate.glsl"
@@ -693,7 +767,13 @@ if (mat < 10512) {
                                 if (color.g != color.b) { // Nether Gold Ore:Raw Gold Part
                                     #include "/lib/materials/specificMaterials/rawGoldBlock.glsl"
                                     #if GLOWING_ORES >= 1
-                                        emission = color.g * 1.5;
+                                        #ifdef GLOWING_NETHER_GOLD
+                                            emission = color.g * 1.5 * ORE_EMISSION;
+                                            #ifdef SITUATIONAL_ORES
+                                                float skyLightFactor = pow2(1.0 - min1(lmCoord.y * 2.9));
+                                                emission *= skyLightFactor;
+                                            #endif
+                                        #endif
                                     #endif
                                 } else { // Nether Gold Ore:Netherrack Part
                                     #include "/lib/materials/specificMaterials/netherrack.glsl"
@@ -717,8 +797,14 @@ if (mat < 10512) {
                                 if (color.r != color.g && (color.b / color.r > 1.5 || color.b > 0.8)) { // Diamond Ore:Diamond Part
                                     #include "/lib/materials/specificMaterials/diamondBlock.glsl"
                                     #if GLOWING_ORES >= 1
-                                        emission = color.g + 1.5;
-                                        color.rgb *= color.rgb;
+                                        #ifdef GLOWING_DIAMOND
+                                            emission = (color.g + 1.5) * ORE_EMISSION;
+                                            color.rgb *= color.rgb;
+                                            #ifdef SITUATIONAL_ORES
+                                                float skyLightFactor = pow2(1.0 - min1(lmCoord.y * 2.9));
+                                                emission *= skyLightFactor;
+                                            #endif
+                                        #endif
                                     #endif
                                 } else { // Diamond Ore:Stone Part, Diamond Ore:StoneToDiamond part
                                     #include "/lib/materials/specificMaterials/stone.glsl"
@@ -732,8 +818,14 @@ if (mat < 10512) {
                                 } else { // Deepslate Diamond Ore:Diamond Part
                                     #include "/lib/materials/specificMaterials/diamondBlock.glsl"
                                     #if GLOWING_ORES >= 1
-                                        emission = color.g + 1.5;
-                                        color.rgb *= color.rgb;
+                                        #ifdef GLOWING_DIAMOND
+                                            emission = (color.g + 1.5) * ORE_EMISSION;
+                                            color.rgb *= color.rgb;
+                                            #ifdef SITUATIONAL_ORES
+                                                float skyLightFactor = pow2(1.0 - min1(lmCoord.y * 2.9));
+                                                emission *= skyLightFactor;
+                                            #endif
+                                        #endif
                                     #endif
                                 }
                             }
@@ -747,6 +839,18 @@ if (mat < 10512) {
                                 highlightMult = factor * 3.0;
 
                                 smoothnessD = factor;
+
+                                #if GLOWING_AMETHYST_BLOCK == 1
+                                    //dedicated to Saikōkyūno
+                                    emission = pow2(max0(1.0 - 0.25 * 2.85) * color.g) * 10.0;
+                                    color.g *= 1.0 - emission * 0.2;
+                                #endif
+
+                                #if GLOWING_AMETHYST_BLOCK == 2
+                                    //dedicated to Saikōkyūno
+                                    emission = pow2(max0(1.0 - 0.25 * 2.85) * color.g) * 20.0;
+                                    color.g *= 1.0 - emission * 0.2;
+                                #endif
 
                                 #ifdef COATED_TEXTURES
                                     noiseFactor = 0.66;
@@ -775,15 +879,25 @@ if (mat < 10512) {
                         if (mat < 10344) {
                             if (mat == 10336) { // Emerald Block
                                 #include "/lib/materials/specificMaterials/emeraldBlock.glsl"
+                                #ifdef GLOWING_EMERALD_BLOCK
+                                    emission = pow2(pow(color.g, 2.5)) * 9.0;
+                                    color.rgb *= color.rgb;
+                                #endif
                             }
                             else /*if (mat == 10340)*/ { // Emerald Ore
                                 if (color.r != color.g && color.g > 0.45) { // Emerald Ore:Emerald Part
                                     #include "/lib/materials/specificMaterials/emeraldBlock.glsl"
                                     #if GLOWING_ORES >= 1
-                                        if (color.g - color.b > 0.2 || color.b > 0.9) {
-                                            emission = 2.0;
-                                            color.rgb *= color.rgb;
-                                        }
+                                        #ifdef GLOWING_EMERALD
+                                            if (color.g - color.b > 0.2 || color.b > 0.9) {
+                                                emission = 2.0 * ORE_EMISSION;
+                                                color.rgb *= color.rgb;
+                                            }
+                                            #ifdef SITUATIONAL_ORES
+                                                float skyLightFactor = pow2(1.0 - min1(lmCoord.y * 2.9));
+                                                emission *= skyLightFactor;
+                                            #endif
+                                        #endif
                                     #endif
                                 } else { // Emerald Ore:Stone Part
                                     #include "/lib/materials/specificMaterials/stone.glsl"
@@ -794,10 +908,16 @@ if (mat < 10512) {
                                 if (color.r != color.g && color.g > 0.45) { // Deepslate Emerald Ore:Emerald Part
                                     #include "/lib/materials/specificMaterials/emeraldBlock.glsl"
                                     #if GLOWING_ORES >= 1
-                                        if (color.g - color.b > 0.2 || color.b > 0.9) {
-                                            emission = 2.0;
-                                            color.rgb *= color.rgb;
-                                        }
+                                        #ifdef GLOWING_EMERALD
+                                            if (color.g - color.b > 0.2 || color.b > 0.9) {
+                                                emission = 2.0 * ORE_EMISSION;
+                                                color.rgb *= color.rgb;
+                                            }
+                                            #ifdef SITUATIONAL_ORES
+                                                float skyLightFactor = pow2(1.0 - min1(lmCoord.y * 2.9));
+                                                emission *= skyLightFactor;
+                                            #endif
+                                        #endif
                                     #endif
                                 } else { // Deepslate Emerald Ore:Deepslate Part
                                     #include "/lib/materials/specificMaterials/deepslate.glsl"
@@ -814,6 +934,12 @@ if (mat < 10512) {
                         if (mat < 10360) {
                             if (mat == 10352) { // Lapis Block, Dried Kelp Block
                                 #include "/lib/materials/specificMaterials/lapisBlock.glsl"
+                                #ifdef GLOWING_LAPIS_BLOCK
+                                    if (color.b > color.g) {
+                                        emission = pow2(pow(color.b, 1.5)) * 50.0;
+                                        color.rgb *= color.rgb;
+                                    }
+                                #endif
                             }
                             else /*if (mat == 10356)*/ { // Lapis Ore
                                 if (color.r != color.g) { // Lapis Ore:Lapis Part
@@ -821,10 +947,16 @@ if (mat < 10512) {
                                     smoothnessG *= 0.5;
                                     smoothnessD *= 0.5;
                                     #if GLOWING_ORES >= 1
-                                        if (color.b - color.r > 0.2) {
-                                            emission = 2.0;
-                                            color.rgb *= color.rgb;
-                                        }
+                                        #ifdef GLOWING_LAPIS
+                                            if (color.b - color.r > 0.2) {
+                                                emission = 2.0 * ORE_EMISSION;
+                                                color.rgb *= color.rgb;
+                                            }
+                                            #ifdef SITUATIONAL_ORES
+                                                float skyLightFactor = pow2(1.0 - min1(lmCoord.y * 2.9));
+                                                emission *= skyLightFactor;
+                                            #endif
+                                        #endif
                                     #endif
                                 } else { // Lapis Ore:Stone Part
                                     #include "/lib/materials/specificMaterials/stone.glsl"
@@ -837,10 +969,16 @@ if (mat < 10512) {
                                     smoothnessG *= 0.5;
                                     smoothnessD *= 0.5;
                                     #if GLOWING_ORES >= 1
-                                        if (color.b - color.r > 0.2) {
-                                            emission = 2.0;
-                                            color.rgb *= color.rgb;
-                                        }
+                                        #ifdef GLOWING_LAPIS
+                                            if (color.b - color.r > 0.2) {
+                                                emission = 2.0 * ORE_EMISSION;
+                                                color.rgb *= color.rgb;
+                                            }
+                                            #ifdef SITUATIONAL_ORES
+                                                float skyLightFactor = pow2(1.0 - min1(lmCoord.y * 2.9));
+                                                emission *= skyLightFactor;
+                                            #endif
+                                        #endif
                                     #endif
                                 } else { // Deepslate Lapis Ore:Deepslate Part
                                     #include "/lib/materials/specificMaterials/deepslate.glsl"
@@ -856,7 +994,13 @@ if (mat < 10512) {
                                 if (color.g != color.b) { // Nether Quartz Ore:Quartz Part
                                     #include "/lib/materials/specificMaterials/quartzBlock.glsl"
                                     #if GLOWING_ORES >= 2
-                                        emission = pow2(color.b * 1.5);
+                                        #ifdef GLOWING_QUARTZ
+                                            emission = pow2(color.b * 1.5) * ORE_EMISSION;
+                                            #ifdef SITUATIONAL_ORES
+                                                float skyLightFactor = pow2(1.0 - min1(lmCoord.y * 2.9));
+                                                emission *= skyLightFactor;
+                                            #endif
+                                        #endif
                                     #endif
                                 } else { // Nether Quartz Ore:Netherrack Part
                                     #include "/lib/materials/specificMaterials/netherrack.glsl"
@@ -1119,7 +1263,13 @@ if (mat < 10512) {
                                 if (color.r > color.b * 3.0) { // Gilded Blackstone:Gilded Part
                                     #include "/lib/materials/specificMaterials/rawGoldBlock.glsl"
                                     #if GLOWING_ORES >= 2
-                                        emission = color.g * 1.5;
+                                        #ifdef GLOWING_GILDED_BLACKSTONE
+                                            emission = color.g * 1.5 * ORE_EMISSION;
+                                            #ifdef SITUATIONAL_ORES
+                                                float skyLightFactor = pow2(1.0 - min1(lmCoord.y * 2.9));
+                                                emission *= skyLightFactor;
+                                            #endif
+                                        #endif
                                     #endif
                                 } else { // Gilded Blackstone:Blackstone Part
                                     #include "/lib/materials/specificMaterials/blackstone.glsl"
@@ -1458,13 +1608,24 @@ if (mat < 10512) {
                         if (mat < 10616) {
                             if (mat == 10608) { // Redstone Block
                                 #include "/lib/materials/specificMaterials/redstoneBlock.glsl"
+                                #ifdef GLOWING_REDSTONE_BLOCK
+                                    emission = pow2(pow(color.r, 2.5)) * 9.0;
+                                    color.gb *= 0.05;
+                                #endif
+
                             }
                             else /*if (mat == 10612)*/ { // Redstone Ore:Unlit
                                 if (color.r - color.g > 0.2) { // Redstone Ore:Unlit:Redstone Part
                                     #include "/lib/materials/specificMaterials/redstoneBlock.glsl"
                                     #if GLOWING_ORES >= 1
-                                        emission = pow2(color.r) * color.r * 4.0;
-                                        color.gb *= 0.1;
+                                        #ifdef GLOWING_REDSTONE
+                                            emission = pow2(color.r) * color.r * 4.0 * ORE_EMISSION;
+                                            color.gb *= 0.1;
+                                            #ifdef SITUATIONAL_ORES
+                                                float skyLightFactor = pow2(1.0 - min1(lmCoord.y * 2.9));
+                                                emission *= skyLightFactor;
+                                            #endif
+                                        #endif
                                     #endif
                                 } else { // Redstone Ore:Unlit:Stone Part
                                     #include "/lib/materials/specificMaterials/stone.glsl"
@@ -1474,7 +1635,7 @@ if (mat < 10512) {
                             if (mat == 10616) { // Redstone Ore:Lit
                                 if (color.r - color.g > 0.2) { // Redstone Ore:Lit:Redstone Part
                                     #include "/lib/materials/specificMaterials/redstoneBlock.glsl"
-                                    emission = pow2(pow2(color.r)) * 6.0;
+                                    emission = pow2(pow2(color.r)) * 6.0 * ORE_EMISSION;
                                     color.gb *= 0.05;
                                 } else { // Redstone Ore:Lit:Stone Part
                                     #include "/lib/materials/specificMaterials/stone.glsl"
@@ -1485,8 +1646,14 @@ if (mat < 10512) {
                                 if (color.r - color.g > 0.2) { // Deepslate Redstone Ore:Unlit:Redstone Part
                                     #include "/lib/materials/specificMaterials/redstoneBlock.glsl"
                                     #if GLOWING_ORES >= 1
-                                        emission = pow2(color.r) * color.r * 4.0;
-                                        color.gb *= 0.1;
+                                        #ifdef GLOWING_REDSTONE
+                                            emission = pow2(color.r) * color.r * 4.0 * ORE_EMISSION;
+                                            color.gb *= 0.1;
+                                            #ifdef SITUATIONAL_ORES
+                                                float skyLightFactor = pow2(1.0 - min1(lmCoord.y * 2.9));
+                                                emission *= skyLightFactor;
+                                            #endif
+                                        #endif
                                     #endif
                                 } else { // Deepslate Redstone Ore:Unlit:Deepslate Part
                                     #include "/lib/materials/specificMaterials/deepslate.glsl"
@@ -1498,7 +1665,7 @@ if (mat < 10512) {
                             if (mat == 10624) { // Deepslate Redstone Ore:Lit
                                 if (color.r - color.g > 0.2) { // Deepslate Redstone Ore:Lit:Redstone Part
                                     #include "/lib/materials/specificMaterials/redstoneBlock.glsl"
-                                    emission = pow2(pow2(color.r)) * 6.0;
+                                    emission = pow2(pow2(color.r)) * 6.0 * ORE_EMISSION;
                                     color.gb *= 0.05;
                                 } else { // Deepslate Redstone Ore:Lit:Deepslate Part
                                     #include "/lib/materials/specificMaterials/deepslate.glsl"

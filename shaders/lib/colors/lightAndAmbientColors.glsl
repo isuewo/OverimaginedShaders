@@ -17,13 +17,15 @@
     vec3 sunsetClearAmbientColor   = noonClearAmbientColor * vec3(1.0, 0.8, 0.7);
 
     #if !defined COMPOSITE && !defined DEFERRED1
-        vec3 nightClearLightColor = vec3(0.15, 0.14, 0.20) * (0.4 + vsBrightness * 0.4); //ground color
+        vec3 nightClearLightColor0 = vec3(0.15, 0.14, 0.20) * (0.4 + vsBrightness * 0.4); //ground color
     #elif defined DEFERRED1
-        vec3 nightClearLightColor = vec3(0.11, 0.14, 0.20); //cloud color
+        vec3 nightClearLightColor0 = vec3(0.11, 0.14, 0.20); //cloud color
     #else
-        vec3 nightClearLightColor = vec3(0.07, 0.12, 0.27) * (0.25 + vsBrightness * 0.25); //light shaft color
+        vec3 nightClearLightColor0 = vec3(0.07, 0.12, 0.27) * (0.25 + vsBrightness * 0.25); //light shaft color
     #endif
-    vec3 nightClearAmbientColor   = vec3(0.09, 0.12, 0.17) * (1.55 + vsBrightness * 0.77);
+    vec3 nightClearLightColor = nightClearLightColor0 * NIGHT_BRIGHTNESS;
+    vec3 nightClearAmbientColor0   = vec3(0.09, 0.12, 0.17) * (1.55 + vsBrightness * 0.77);
+    vec3 nightClearAmbientColor = nightClearAmbientColor0 * NIGHT_BRIGHTNESS;
 
     vec3 dayRainLightColor   = vec3(0.1, 0.12, 0.24) * (0.75 + vsBrightness * 0.25);
     vec3 dayRainAmbientColor = vec3(0.17, 0.21, 0.3) * (1.5 + vsBrightness);
@@ -50,6 +52,9 @@
     vec3 endLightColor = vec3(0.65, 0.50, 1.0);
     vec3 lightColor    = endLightColor * (0.09 + 0.03 * vsBrightness);
     vec3 ambientColor  = endLightColor * (0.45 + 0.10 * vsBrightness);
-#endif
+// #endif
+#elif defined OVERWORLD && defined OVERWORLD_BEAMS
+    vec3 ambientColor = mix(clearAmbientColor, rainAmbientColor, rainFactor);
+    #endif
 
 #endif

@@ -94,6 +94,8 @@ uniform sampler2D depthtex1;
 #if LIGHTSHAFT_QUALITY > 0 && (defined OVERWORLD || defined END)
 	#ifdef END
 		#include "/lib/atmospherics/enderBeams.glsl"
+	#elif defined OVERWORLD && defined OVERWORLD_BEAMS
+		#include "/lib/atmospherics/overworldBeams.glsl"
 	#endif
 	#include "/lib/atmospherics/volumetricLight.glsl"
 #endif

@@ -202,6 +202,9 @@ float shadowTime = shadowTimeVar2 * shadowTimeVar2;
 	#ifdef END
 		#include "/lib/atmospherics/enderBeams.glsl"
 	#endif
+	#if defined OVERWORLD && defined OVERWORLD_BEAMS
+		#include "/lib/atmospherics/overworldBeams.glsl"
+	#endif
 #endif
 
 #ifdef AURORA_BOREALIS
@@ -430,6 +433,9 @@ flat out vec3 upVec, sunVec;
 		uniform float frameTimeSmooth;
 		uniform float far;
 
+		uniform vec3 cameraPosition;
+	#endif
+	#if defined OVERWORLD && defined OVERWORLD_BEAMS
 		uniform vec3 cameraPosition;
 	#endif
 #endif

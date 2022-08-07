@@ -3,7 +3,7 @@
 #endif
 
 vec3 GetWave(in vec3 pos, float waveSpeed) {
-    float wind = frameTimeCounter * waveSpeed;
+    float wind = frameTimeCounter * waveSpeed * WAVE_SPEED;
 
     float magnitude = sin(wind * 0.0027 + pos.z + pos.y) * 0.04 + 0.04;
     float d0 = sin(wind * 0.0127);

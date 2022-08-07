@@ -4,14 +4,14 @@
          | || |\/| | |_) | | | | |_) || | / _ \ |  \| | | |  
          | || |  | |  __/| |_| |  _ < | |/ ___ \| |\  | | |  
         |___|_|  |_|_|    \___/|_| \_\|_/_/   \_\_| \_| |_|  
-         .
+         
   -> -> -> EDITING THIS FILE HAS A HIGH CHANCE TO BREAK THE SHADERPACK
   -> -> -> DO NOT CHANGE ANYTHING UNLESS YOU KNOW WHAT YOU ARE DOING
   -> -> -> DO NOT EXPECT SUPPORT AFTER MODIFYING SHADER FILES
 ---------------------------------------------------------------------*/
 
 //User Settings//
-    #define CMPR 3 //[0 1 2 3 4 5]
+    #define CMPR 3 //[0 1 2 3 4 5 6]
 
     #define RP_MODE 1 //[0 1]
 
@@ -63,6 +63,119 @@
     //#define FANCY_GLASS
     //#define GENERATED_WATER_NORMALS
 
+//Overimagined//
+    #define AURORA_COLOR_PRESET 0 //[0 1 2 3 4 5 6 7 8 9 10 11] // 0 is manual and default, 1 is monthly and 2 is one color preset same with all numbers after
+        
+	#define AURORA_UP_R 112 //[0 4 8 12 16 20 24 28 32 36 40 44 48 52 56 60 64 68 72 76 80 84 88 92 96 100 104 108 112 116 120 124 128 132 136 140 144 148 152 156 160 164 168 172 176 180 184 188 192 196 200 204 208 212 216 220 224 228 232 236 240 244 248 252 255]
+	#define AURORA_UP_G 36 //[0 4 8 12 16 20 24 28 32 36 40 44 48 52 56 60 64 68 72 76 80 84 88 92 96 100 104 108 112 116 120 124 128 132 136 140 144 148 152 156 160 164 168 172 176 180 184 188 192 196 200 204 208 212 216 220 224 228 232 236 240 244 248 252 255]
+	#define AURORA_UP_B 192 //[0 4 8 12 16 20 24 28 32 36 40 44 48 52 56 60 64 68 72 76 80 84 88 92 96 100 104 108 112 116 120 124 128 132 136 140 144 148 152 156 160 164 168 172 176 180 184 188 192 196 200 204 208 212 216 220 224 228 232 236 240 244 248 252 255]
+    #define AURORA_UP_I 33 //[0 3 5 8 10 13 15 18 20 23 25 28 30 33 35 38 40 43 45 48 50 53 55 58 60 63 65 68 70 73 75 78 80 83 85 88 90 93 95 98 100]
+    
+	#define AURORA_DOWN_R 96 //[0 4 8 12 16 20 24 28 32 36 40 44 48 52 56 60 64 68 72 76 80 84 88 92 96 100 104 108 112 116 120 124 128 132 136 140 144 148 152 156 160 164 168 172 176 180 184 188 192 196 200 204 208 212 216 220 224 228 232 236 240 244 248 252 255]
+	#define AURORA_DOWN_G 255 //[0 4 8 12 16 20 24 28 32 36 40 44 48 52 56 60 64 68 72 76 80 84 88 92 96 100 104 108 112 116 120 124 128 132 136 140 144 148 152 156 160 164 168 172 176 180 184 188 192 196 200 204 208 212 216 220 224 228 232 236 240 244 248 252 255]
+	#define AURORA_DOWN_B 192 //[0 4 8 12 16 20 24 28 32 36 40 44 48 52 56 60 64 68 72 76 80 84 88 92 96 100 104 108 112 116 120 124 128 132 136 140 144 148 152 156 160 164 168 172 176 180 184 188 192 196 200 204 208 212 216 220 224 228 232 236 240 244 248 252 255]
+    #define AURORA_DOWN_I 33 //[0 3 5 8 10 13 15 18 20 23 25 28 30 33 35 38 40 43 45 48 50 53 55 58 60 63 65 68 70 73 75 78 80 83 85 88 90 93 95 98 100]
+    
+    #define AURORA_SIZE 0.65 //[0.00 0.05 0.10 0.15 0.20 0.25 0.30 0.35 0.40 0.45 0.50 0.55 0.60 0.65 0.70 0.75 0.80 0.85 0.90 0.95 1.00 1.05 1.10 1.15 1.20 1.25 1.30 1.35 1.40 1.45 1.50 1.55 1.60 1.65 1.70 1.75 1.80 1.85 1.90 1.95 2.00]
+    #define AURORA_DRAW_DISTANCE 0.65 //[0.00 0.05 0.10 0.15 0.20 0.25 0.30 0.35 0.40 0.45 0.50 0.55 0.60 0.65 0.70 0.75 0.80 0.85 0.90 0.95 1.00 1.05 1.10 1.15 1.20 1.25 1.30 1.35 1.40 1.45 1.50 1.55 1.60 1.65 1.70 1.75 1.80 1.85 1.90 1.95 2.00]
+
+    #define BLOCKY_AURORA
+    //#define RAINBOW_AURORA
+
+//Prepare for... whatever this is :ioa:
+    #define SUN_ANGLE 0 //[-60 -55 -50 -45 -40 -35 -30 -25 -20 -15 -10 -5 0 5 10 15 20 25 30 35 40 45 50 55 60]
+    #if SUN_ANGLE == -60
+    const float sunPathRotation = -60.0;
+    #elif SUN_ANGLE == -55
+    const float sunPathRotation = -55.0;
+    #elif SUN_ANGLE == -50
+    const float sunPathRotation = -50.0;
+    #elif SUN_ANGLE == -45
+    const float sunPathRotation = -45.0;
+    #elif SUN_ANGLE == -40
+    const float sunPathRotation = -40.0;
+    #elif SUN_ANGLE == -35
+    const float sunPathRotation = -35.0;
+    #elif SUN_ANGLE == -30
+    const float sunPathRotation = -30.0;
+    #elif SUN_ANGLE == -25
+    const float sunPathRotation = -25.0;
+    #elif SUN_ANGLE == -20
+    const float sunPathRotation = -20.0;
+    #elif SUN_ANGLE == -15
+    const float sunPathRotation = -15.0;
+    #elif SUN_ANGLE == -10
+    const float sunPathRotation = -10.0;
+    #elif SUN_ANGLE == -5
+    const float sunPathRotation = -5.0;
+    #elif SUN_ANGLE == 0
+    const float sunPathRotation = 0.0;
+    #define PERPENDICULAR_TWEAKS
+    #elif SUN_ANGLE == 5
+    const float sunPathRotation = 5.0;
+    #elif SUN_ANGLE == 10
+    const float sunPathRotation = 10.0;
+    #elif SUN_ANGLE == 15
+    const float sunPathRotation = 15.0;
+    #elif SUN_ANGLE == 20
+    const float sunPathRotation = 20.0;
+    #elif SUN_ANGLE == 25
+    const float sunPathRotation = 25.0;
+    #elif SUN_ANGLE == 30
+    const float sunPathRotation = 30.0;
+    #elif SUN_ANGLE == 35
+    const float sunPathRotation = 35.0;
+    #elif SUN_ANGLE == 40
+    const float sunPathRotation = 40.0;
+    #elif SUN_ANGLE == 45
+    const float sunPathRotation = 45.0;
+    #elif SUN_ANGLE == 50
+    const float sunPathRotation = 50.0;
+    #elif SUN_ANGLE == 55
+    const float sunPathRotation = 55.0;
+    #elif SUN_ANGLE == 60
+    const float sunPathRotation = 60.0;
+    #endif
+//Congrats! You survived whatever that was...
+
+    #define CLOUD_WIDTH 0.05 //[0.025 0.03 0.035 0.04 0.045 0.05 0.055 0.06 0.065 0.07 0.075]
+    #define CLOUD_SPEED 1.0 //[0.75 1.0 1.5 2.0 3.0 4.0]
+    
+    #define WAVE_SPEED 1.0 //[0.5 0.6 0.7 0.8 0.9 1.0 1.1 1.2 1.3 1.4 1.5 1.6 1.7 1.8 1.9 2.0]
+
+    #define NIGHT_BRIGHTNESS 1.0 //[0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0 1.1 1.2 1.3 1.4 1.5 1.6. 1.7 1.8 1.9 2.0]
+    
+    #define WAVE_INTENSITY 1.25 //[0.0 0.25 0.5 0.75 1.0 1.25 1.5 1.75 2.0]
+    //#define OVERWORLD_BEAMS
+
+    //#define GLOWING_EMERALD_BLOCK
+    //#define GLOWING_REDSTONE_BLOCK
+    //#define GLOWING_LAPIS_BLOCK
+    #define GLOWING_AMETHYST_BLOCK 0 //[0 1 2]
+
+
+    #define ORE_EMISSION 1.0 //[0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0 1.1 1.2 1.3 1.4 1.5 1.6 1.7 1.8 1.9 2.0]
+
+    #define GLOWING_DEBRIS
+    #define GLOWING_IRON
+    #define GLOWING_COPPER
+    #define GLOWING_GOLD
+    #define GLOWING_NETHER_GOLD
+    #define GLOWING_DIAMOND
+    #define GLOWING_EMERALD
+    #define GLOWING_LAPIS
+    #define GLOWING_QUARTZ
+    #define GLOWING_GILDED_BLACKSTONE
+    #define GLOWING_REDSTONE
+
+    //#define GLOWING_WART
+    
+    #define STAR_BRIGHTNESS 1.0 //[0.5 0.6 0.7 0.8 0.9 1.0 1.1 1.2 1.3 1.4 1.5 1.6 1.7 1.8 1.9 2.0]
+    
+    //#define SITUATIONAL_ORES
+
+    #define UNDERWATER_DISTORTION_STRENGTH 3.0 //[1.0 1.5 2.0 2.5 3.0 3.5 4.0]
+
 //Internal Settings//
 
     #define PBR_REFLECTIONS
@@ -74,16 +187,13 @@
     #define SHADOW_FILTERING
     const int shadowMapResolution = 2048;
 
-    // Disable PERPENDICULAR_TWEAKS if you change sunPathRotation to anything but 0.0 or else you will get incorrect lighting
-    const float sunPathRotation = 0.0;
-    #define PERPENDICULAR_TWEAKS
     #define SIDE_SHADOWING
 
     #define LIGHT_HIGHLIGHT
     #define DIRECTIONAL_SHADING
     #define SSAO_QUALITY 1 //[1 2 3]
 
-    #define CLOUD_STRETCH 5.5
+    #define CLOUD_STRETCH 5.5 //[2.0 2.5 3.0 3.5 4.0 4.5 5.0 5.5 6.0 6.5 7.0 7.5 8.0 8.5]
     #define ATMOSPHERIC_FOG
     #define SCENE_AWARE_LIGHT_SHAFTS
     #define CAVE_FOG

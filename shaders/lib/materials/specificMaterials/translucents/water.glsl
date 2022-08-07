@@ -98,7 +98,7 @@ glColorM = sqrt1(glColorM) * vec3(1.0, 0.85, 0.8);
             wind *= 0.8;
             vec2 parallaxMult = 0.0005 * viewVector.xy / lViewPos;
             float normalOffset = 0.002;
-            float waveMult = 1.25;
+            float waveMult = WAVE_INTENSITY;
 
             for (int i = 0; i < 4; i++) {
                 float height = 0.5 - GetWaterHeightMap(waterPos, nViewPos, wind);
