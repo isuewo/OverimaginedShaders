@@ -387,3 +387,10 @@ option.GLOWING_LAPIS=Emissive Lapis Ore
 option.GLOWING_QUARTZ=Emissive Nether Quartz Ore
 option.GLOWING_GILDED_BLACKSTONE=Emissive Gilded Blackstone
 option.GLOWING_REDSTONE=Emissive Redstone Ore
+
+screen.IPBR_NORMALS=IntegratedPBR Normals
+screen.IPBR_NORMALS.comment=Settings that relate to IntegratedPBR Normals.
+option.NORMAL_RES=Normals Resolution
+option.NORMAL_RES.comment=Change the resolution at which the integrated normal maps render.
+option.NORMAL_THRESHOLD=Normals Strength
+option.NORMAL_THRESHOLD.comment=Change how strong or weak the integrated normal maps will be.

@@ -1,16 +1,13 @@
-const float normalThreshold = 0.05;
-const float packSizeGN = 128.0;
-
 float GetDif(float lOriginalAlbedo, vec2 offsetCoord) {
     #ifndef GBUFFERS_WATER
-        float lNearbyAlbedo = length(texture2D(texture, offsetCoord).rgb);    
+        float lNearbyAlbedo = length(texture2D(texture, offsetCoord).rgb);
     #else
         vec4 textureSample = texture2D(texture, offsetCoord);
         float lNearbyAlbedo = length(textureSample.rgb * textureSample.a * 1.5);
     #endif
     float dif = lOriginalAlbedo - lNearbyAlbedo;
-    if (dif > 0.0) dif = max(dif - normalThreshold, 0.0);
-    else           dif = min(dif + normalThreshold, 0.0);
+    if (dif > 0.0) dif = max(dif + NORMAL_THRESHOLD, 0.0);
+    else           dif = min(dif - NORMAL_THRESHOLD, 0.0);
     return dif;
 }
 
@@ -25,7 +22,7 @@ void GenerateNormals(inout vec3 normalM, vec3 color) {
     #else
         vec2 offsetR = max(absMidCoordPos2.x, absMidCoordPos2.y) * vec2(float(atlasSize.y) / float(atlasSize.x), 1.0);
     #endif
-    offsetR /= packSizeGN;
+    offsetR /= NORMAL_RES;
 
     vec2 midCoord = texCoord - midCoordPos;
     vec2 maxOffsetCoord = midCoord + absMidCoordPos;
