@@ -1,3 +1,5 @@
+#### Hey everyone, thank you for your great interest in Overimagined, but Emin has expressed his concerns about the future of Reimagined and our edit, so we have put our development on indefinite hold until we can find a solution to the underlying problem that both parties are comfortable with
+
 <img src="https://user-images.githubusercontent.com/46494907/182962685-cb624c8b-782a-4d51-b9e5-090267ae6624.png" alt="Overimagined_logo" width="100" height="auto" />
   <h1>Overimagined Shaders</h1>
   A Complementary Reimagined edit 
