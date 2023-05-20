@@ -1,39 +1,7 @@
-# Wondering why this repo is archived? An exciting announcement is coming soon, stay tuned.
+# Overimagined Shaders
+Overimagined Shaders, by SpacEagle17 and isuewo, was an edit of EminGT's Complementary Reimagined Shaders. The goal of this edit was to provide more customization options for Complementary Reimagined, while keeping the look and performance as similar to the original as possible. With default settings, Overimagined functioned the same as Reimagined; the additional features could be enabled in the shader menu, either individually or together via the Overimagined profile. Overimagined was supposed to get updated alongside Complementary Reimagined, so that you won't miss out on any new features.
 
-<img src="https://user-images.githubusercontent.com/46494907/182962685-cb624c8b-782a-4d51-b9e5-090267ae6624.png" alt="Overimagined_logo" width="100" height="auto" />
-  <h1>Overimagined Shaders</h1>
-  A Complementary Reimagined edit 
-  
-## :link: Links
-* **[Download](https://github.com/isuewo/OverimaginedShaders/releases/download/r1.0/OverimaginedShaders_r1.2.1-1.0.zip) the latest release here!**
-* Join the [Complementary Discord](https://discord.gg/A6faFYt) to get support and interact with the community! You can find us in the "overimagined" thread under #shader-general.
-* [YouTube Trailer](https://www.youtube.com/watch?v=tJBoYaol3f4) of Overimagined Shader
+## Where is Overimagined Shaders now?
+Due to **licensing concerns** by Emin, development was halted for some time, but we've been secretly working on something new that we'll be releasing soon, so stay tuned. In the meantime, we don't recommend downloading Overimagined Shaders anymore, because they are based on a very old version of Complementary Reimagined. That's also why we have **removed the download** option.
 
-## What is Overimagined Shaders?
-
-Overimagined Shaders, by SpacEagle17 and isuewo, is an edit of EminGT's Complementary Reimagined Shaders. The goal of this edit is to provide more customization options for Complementary Reimagined, while keeping the look and performance as similar to the original as possible. With default settings, Overimagined functions the same as Reimagined; the additional features can be enabled in the shader menu, either individually or together via the Overimagined profile. Overimagined will get updated alongside Complementary Reimagined, so that you won't miss out on any new features.
-
-## :camera: Screenshots
-<img src="https://user-images.githubusercontent.com/46494907/182963116-0998fbc9-cd68-4912-9e41-31c3a1de7d3d.png" width="500" height="auto" />
-<img src="https://user-images.githubusercontent.com/46494907/182963134-d613b400-69df-4e8b-94c1-908a49b8b9c5.png" width="500" height="auto" />
-<img src="https://user-images.githubusercontent.com/46494907/182963710-179de3c1-7ef4-4eb6-a495-c7051bbdb38f.png" width="500" height="auto" />
-<img src="https://user-images.githubusercontent.com/46494907/182964341-dc1dc1ae-cc6d-46bb-a274-54384d6668fc.png" width="500" height="auto" />
-
-## :scroll: Features
-* Aurora Color Settings (Custom, Varying, Color Profiles and Rainbow)
-* Aurora Density, Draw Distance and Intensity Settings
-* Configurable Clouds (Speed, Width, Height)
-* Configurable Sun Angle
-* Emissive Amethyst Block
-* Emissive Ores Multiplier
-* Emissive Redstone, Emerald and Lapis Block
-* Emissive Wart Blocks
-* Individual Emissive Ores
-* Night Brightness Option
-* Non-blocky Aurora
-* Overworld Beams
-* Realistic Water Wave Intensity
-* Scene Aware Light Shafts Toggle
-* Star Brightness Option
-* Underwater Distortion Intensity
-* Waving Speed of Foliage and Leaves Option
+However, you are welcome to join the [Complementary Discord](https://discord.gg/A6faFYt) to interact with the community and share your excitement! You can currently find us in the "euphoria" thread under #shader-general if you want to contact us directly.
