@@ -4,4 +4,4 @@ Overimagined Shaders, by SpacEagle17 and isuewo, was an edit of EminGT's Complem
 ## Where is Overimagined Shaders now?
 Due to **licensing concerns** by Emin, development was halted for some time, but we've been secretly working on something new that we'll be releasing soon, so stay tuned. In the meantime, we don't recommend downloading Overimagined Shaders anymore, because they are based on a very old version of Complementary Reimagined. That's also why we have **removed the download** option.
 
-However, you are welcome to join the [Complementary Discord](https://discord.gg/A6faFYt) to interact with the community and share your excitement! You can currently find us in the "euphoria-patch" thread under #shader-general if you want to contact us directly.
+However, you are welcome to join the [Complementary Discord](https://discord.gg/A6faFYt) to interact with the community and share your excitement! You can currently find us in the "euphoria-patches" thread under #shader-general if you want to contact us directly.
