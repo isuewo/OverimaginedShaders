@@ -41,6 +41,7 @@ uniform int frameCounter;
 uniform int heldItemId;
 uniform int heldItemId2;
 
+uniform float far;
 uniform float viewWidth;
 uniform float viewHeight;
 uniform float nightVision;
