@@ -19,7 +19,7 @@ If any more questions arise, just ask in our above linked thread!
 How to install:
 1) Get the required [Reimagined](https://modrinth.com/shader/complementary-reimagined/versions) version and put it in the shaderpacks folder (don't unzip it). <br>
 **Currently: Reimagined r2.3**
-3) Get the latest EuphoriaPatcher mod file ([See above](https://github.com/isuewo/OverimaginedShaders/blob/release/README.md#L12)) and put it in your mods folder. <br>
+3) Get the latest EuphoriaPatcher mod file ([See above](https://github.com/isuewo/OverimaginedShaders/blob/release/README.md#where-can-i-get-the-euphora-patches-add-on)) and put it in your mods folder. <br>
 **Currently: 0.0.14**
 4) Launch the game with fabric/forge
 5) Complementary Reimagined + Euphoria Patches will now appear in your shaderpacks folder
