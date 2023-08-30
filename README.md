@@ -1,7 +1,28 @@
 # Overimagined Shaders
-Overimagined Shaders, by SpacEagle17 and isuewo, was an edit of EminGT's Complementary Reimagined Shaders. The goal of this edit was to provide more customization options for Complementary Reimagined, while keeping the look and performance as similar to the original as possible. With default settings, Overimagined functioned the same as Reimagined; the additional features could be enabled in the shader menu, either individually or together via the Overimagined profile. Overimagined was supposed to get updated alongside Complementary Reimagined, so that you won't miss out on any new features.
+Overimagined no longer exists! But don't worry, we have moved!
 
-## Where is Overimagined Shaders now?
-Due to **licensing concerns** by Emin, development was halted for some time, but we've been secretly working on something new that we'll be releasing soon, so stay tuned. In the meantime, we don't recommend downloading Overimagined Shaders anymore, because they are based on a very old version of Complementary Reimagined. That's also why we have **removed the download** option.
+# Who we are now:
+## We are now called Euphoria Patches!
 
-However, you are welcome to join the [Complementary Discord](https://discord.gg/A6faFYt) to interact with the community and share your excitement! You can currently find us in the "euphoria-patches" thread under #shader-general if you want to contact us directly.
+# What is Euphoria Patches?
+Euphoria Patches is an add-on for Complementary Reimagined Shaders, developed by SpacEagle17 and isuewo. It has the goal of extending Reimagined with more handcrafted options and settings, one of its most important ones being Multicolored Block-lighting. All options are disabled by default and the user can decide what to enable.
+
+# Where can I get the Euphora Patches add-on?
+
+Get the mod from this [pinned message](https://discord.com/channels/744189556768636941/1005837848982847548/1086263167132368926) in the [#euphoria-patches](https://discord.com/channels/744189556768636941/1005837848982847548) thread on the [Complementary Discord](https://discord.gg/A6faFYt).
+
+Euphoria Patches is distributed via a mod which installs the shaderpack if the correct Reimagined version is installed.
+Currently you can only get this mod on the Complementary Discord. In the future the mod will be made available on Modrinth. Further download instructions can be found in the pinned messages of the thread.
+If any more questions arise, just ask in our above linked thread!
+
+## How to Install?
+How to install:
+1) Get the required [Reimagined](https://modrinth.com/shader/complementary-reimagined/versions) version and put it in the shaderpacks folder (don't unzip it).
+  Currently Reimagined r2.3
+3) Get the latest EuphoriaPatcher mod file ([See above](https://github.com/isuewo/OverimaginedShaders/blob/release/README.md#L12)) and put it in your mods folder
+  Currently 0.0.14
+4) Launch the game with fabric/forge
+5) Complementary Reimagined + Euphoria Patches will now appear in your shaderpacks folder
+
+Fabric works from 1.14 to 1.20.1
+Forge works from 1.18.2 to 1.20.1
