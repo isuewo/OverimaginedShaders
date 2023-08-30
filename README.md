@@ -1,7 +1,7 @@
 # Overimagined Shaders
 Overimagined no longer exists! But don't worry, we have moved!
 
-# Who we are now:
+# Who are we now?
 ## We are now called Euphoria Patches!
 
 # What is Euphoria Patches?
