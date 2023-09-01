@@ -9,7 +9,7 @@ Euphoria Patches is an add-on for Complementary Reimagined Shaders, developed by
 
 # Where can I get the Euphora Patches add-on?
 
-Get the mod from this [pinned message](https://discord.com/channels/744189556768636941/1005837848982847548/1086263167132368926) in the [#euphoria-patches](https://discord.com/channels/744189556768636941/1005837848982847548) thread on the [Complementary Discord](https://discord.gg/A6faFYt).
+Get the mod from this [pinned message](https://discord.com/channels/744189556768636941/1005837848982847548/1086263167132368926) in the [#euphoria-patches](https://discord.com/channels/744189556768636941/1005837848982847548) thread on the [Complementary Discord](https://discord.gg/ck5htDSQPv).
 
 Euphoria Patches is distributed via a mod which installs the shaderpack if the correct Reimagined version is installed.
 Currently you can only get this mod on the Complementary Discord. In the future the mod will be made available on Modrinth. Further download instructions can be found in the pinned messages of the thread.
