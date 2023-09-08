@@ -38,7 +38,7 @@ Get the mod from the pinned messages in the [#euphoria-patches](https://discord.
 
 ## How can I get the Euphoria Patcher mod?
 Currently you can only get this mod on the Complementary Discord. In the future the mod will be made available on Modrinth. Further download instructions can be found in the pinned messages of the thread.
-## Why does Euporia Patches need a mod?
+## Why does Euphoria Patches need a mod?
 [Complementary's license](https://github.com/ComplementaryDevelopment/ComplementaryReimagined/blob/main/License.txt) does not allow us to publish our work as we do not have a "noticeably different from the Original Pack in multiple common gameplay scenarios that must include daytime overworld visuals, regardless of the setting or variable changes in the Modified Pack and/or the Original Pack". We simply add onto Complementary so we obviously don't fall into the green zone. We have had many conversations about this topic with Emin and came to the mutual agreement to distribute it through a patcher where none of Emin's code gets distributed (and by thta not breaking the license) and the user has to have Complementary Shaders installed in order to get our add-on. All parties profit with this method.
 ## When does Euphoria Patches update?
 We actually update the add-on with every dev release Emin releases on [Patreon](https://www.patreon.com/emingt), meaning that when he releases the public version, the add-on should come shorty after!
