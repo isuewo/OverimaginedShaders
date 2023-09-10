@@ -20,7 +20,7 @@ You can get our addon from the official Complementary Installer or download it m
 * 5) Click on install, Complementary Shaders + Euphoria Patches will now appear in your shaderpacks folder
 
 ## The Manual Method
-* 1) Get the required Reimagined version and put it in the shaderpacks folder (don't unzip it).
+* 1) Get the required Complementary version and put it in the shaderpacks folder (don't unzip it).
   * Currently Complementary r5.0 (Reimagined or Unbound)
 * 2) Get the latest EuphoriaPatcher mod file and put it in your mods folder
   * Currently 0.1.0
