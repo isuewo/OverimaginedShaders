@@ -5,7 +5,7 @@ Overimagined no longer exists! But don't worry, we have moved!
 ## We are now called Euphoria Patches!
 
 # What is Euphoria Patches?
-Euphoria Patches is an add-on for Complementary Shaders (Reimagined and Unbound), developed by [SpacEagle17](https://github.com/SpacEagle17) and [isuewo](https://github.com/isuewo). It aims to extend Complementary with more handcrafted options and settings. All options are disabled by default and the user can decide what to enable.
+Euphoria Patches is an add-on for Complementary Shaders (Reimagined and Unbound), developed by [SpacEagle17](https://github.com/SpacEagle17) and [isuewo](https://github.com/isuewo). It aims to extend Complementary with more handcrafted options and settings. All Euphoria options are disabled by default and the user can decide what to enable.
 
 # Where can I get the Euphoria Patches add-on?
 You can get our addon from the official Complementary Installer or download it manually. <br>
