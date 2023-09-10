@@ -13,7 +13,7 @@ You can get our addon from the official Complementary Installer or download it m
 
 # How To Install:
 ## The Installer Method
-* 1) Go to <https://www.complementary.dev/shaders/> and download the [installer](https://github.com/ComplementaryDevelopment/Complementary-Installer/releases/download/latest/Complementary-Installer-1.1.1.jar).
+* 1) Go to <https://www.complementary.dev/shaders/> and download the installer.
 * 2) Open the installer by double-clicking the downloaded file
 * 3) Now click on "Advanced Settings"
 * 4) Check the "Install Euphoria Patches" checkbox
