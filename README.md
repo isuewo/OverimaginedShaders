@@ -21,8 +21,8 @@ You can get our addon from the official Complementary Installer or download it m
 
 ## The Manual Method
 * 1) Get the required Complementary version and put it in the shaderpacks folder (don't unzip it).
-  * Currently Complementary r5.0 (Reimagined or Unbound)
-* 2) Get the latest EuphoriaPatcher mod file and put it in your mods folder
+  * Currently Complementary r5.0 ([Reimagined](https://modrinth.com/shader/complementary-reimagined) or [Unbound](https://modrinth.com/shader/complementary-unbound))
+* 2) Get the latest [EuphoriaPatcher](https://modrinth.com/mod/euphoria-patches) mod file and put it in your mods folder
   * Currently 0.1.0
 * 3) Launch the game with fabric/forge
 * 4) Complementary Shaders + Euphoria Patches will now appear in your shaderpacks folder
@@ -30,7 +30,7 @@ You can get our addon from the official Complementary Installer or download it m
 ### Fabric works from 1.14 to 1.20.1
 ### Forge works from 1.18.2 to 1.20.1
 
-Get the mod from the pinned messages in the [#euphoria-patches](https://discord.com/channels/744189556768636941/1005837848982847548) thread on the [Complementary Discord](https://discord.gg/ck5htDSQPv).
+### Download the mod from Modrinth: https://modrinth.com/mod/euphoria-patches.
 
 # FAQ
 <details><summary>Click to Expand</summary>
@@ -43,7 +43,7 @@ Currently, you can only get this mod on the Complementary Discord. In the future
 ## When does Euphoria Patches update?
 We actually update the add-on with every dev release Emin releases on [Patreon](https://www.patreon.com/emingt), meaning that when he releases the public version, the add-on should come shortly after!
 
-# If any more questions arise, just ask in our above-linked thread!
+# If any more questions arise, just ask in the [#euphoria-patches](https://discord.com/channels/744189556768636941/1005837848982847548) thread on the [Complementary Discord](https://discord.gg/ck5htDSQPv).
 
 </p>
 </details>
