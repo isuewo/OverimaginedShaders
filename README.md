@@ -21,7 +21,7 @@ You can get our addon from the official Complementary Installer or download it m
 
 ## The Manual Method
 * 1) Get the required Complementary version and put it in the shaderpacks folder (don't unzip it).
-  * Currently Complementary r5.0 ([Reimagined](https://modrinth.com/shader/complementary-reimagined) or [Unbound](https://modrinth.com/shader/complementary-unbound))
+  * Currently Complementary r5.0.1 ([Reimagined](https://modrinth.com/shader/complementary-reimagined) or [Unbound](https://modrinth.com/shader/complementary-unbound))
 * 2) Get the latest [EuphoriaPatcher](https://modrinth.com/mod/euphoria-patches) mod file and put it in your mods folder
   * Currently 0.1.1
 * 3) Launch the game with fabric/forge
