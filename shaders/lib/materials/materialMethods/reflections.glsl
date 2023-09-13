@@ -180,7 +180,7 @@ vec4 GetReflection(vec3 normalM, vec3 viewPos, vec3 nViewPos, vec3 playerPos, fl
                         nightNebula += GetNightNebula(nViewPosR, RVdotU, RVdotS);
                         skyReflection += nightNebula;
                     #endif
-                    
+
                     vec2 starCoord = GetStarCoord(nViewPosR, 0.75);
                     skyReflection += GetStars(starCoord, RVdotU, RVdotS);
 
