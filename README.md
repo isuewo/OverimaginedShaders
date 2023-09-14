@@ -10,19 +10,12 @@ Euphoria Patches is an add-on for Complementary Shaders (Reimagined and Unbound)
 ## Download it from Modrinth: https://modrinth.com/mod/euphoria-patches.
 
 # Where can I get the Euphoria Patches add-on?
-You can get our addon from the official Complementary Installer or download it manually. <br>
+You can get our addon from the official Complementary Installer or download the mod. <br>
 ### Download instructions are below.
 
 # How To Install:
-## The Installer Method
-* 1) Go to <https://www.complementary.dev/shaders/> and download the installer.
-* 2) Open the installer by double-clicking the downloaded file
-* 3) Now click on "Advanced Settings"
-* 4) Check the "Install Euphoria Patches" checkbox
-* 5) Click on install, Complementary Shaders + Euphoria Patches will now appear in your shaderpacks folder
-
-## The Manual Method
-* 1) Get the required Complementary version and put it in the shaderpacks folder (don't unzip it).
+## The Mod Method
+* 1) Get the required Complementary version and put it in the shaderpacks folder (**don't unzip or rename it**).
   * Currently Complementary r5.0.1 ([Reimagined](https://modrinth.com/shader/complementary-reimagined) or [Unbound](https://modrinth.com/shader/complementary-unbound))
 * 2) Get the latest [EuphoriaPatcher](https://modrinth.com/mod/euphoria-patches) mod file and put it in your mods folder
   * Currently 0.1.1
@@ -33,6 +26,12 @@ You can get our addon from the official Complementary Installer or download it m
 ### Forge works from 1.18.2 to 1.20.1
 
 ### Download the mod from Modrinth: https://modrinth.com/mod/euphoria-patches.
+## The Installer Method
+* 1) Go to <https://www.complementary.dev/shaders/> and download the installer.
+* 2) Open the installer by double-clicking the downloaded file
+* 3) Now click on "Advanced Settings"
+* 4) Check the "Install Euphoria Patches" checkbox
+* 5) Click on install, Complementary Shaders + Euphoria Patches will now appear in your shaderpacks folder
 
 # FAQ
 <details><summary>Click to Expand</summary>
