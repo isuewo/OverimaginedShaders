@@ -315,13 +315,15 @@ void main() {
             }
         #endif
 
-        // Distant Horizons blending (SSAO)
-        vec3 localPos = (gbufferModelViewInverse * vec4(viewPos)).xyz;
-        localPos.y = 0;
-        float fragDistance = length(localPos);
-        ssao = mix(ssao, 1.0, smoothstep(0.6 * far, far, fragDistance));
+		#if DISTANT_HORIZONS_BLENDING == 1
+			// Distant Horizons blending (SSAO)
+			vec3 localPos = (gbufferModelViewInverse * vec4(viewPos)).xyz;
+			localPos.y = 0;
+			float fragDistance = length(localPos);
+			ssao = mix(ssao, 1.0, smoothstep(DISTANT_HORIZONS_BLENDING_VIEW_DISTANCE_FACTOR * far, far, fragDistance));
+		#endif
 
-        color.rgb *= ssao;
+		color.rgb *= ssao;
 
         #ifdef PBR_REFLECTIONS
             float skyLightFactor = texture6.b;
