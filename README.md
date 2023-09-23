@@ -22,8 +22,8 @@ You can get our addon from the official Complementary Installer or download the 
 * 3) Launch the game with fabric/forge
 * 4) Complementary Shaders + Euphoria Patches will now appear in your shaderpacks folder
 
-### Fabric works from 1.14 to 1.20.1
-### Forge works from 1.18.2 to 1.20.1
+### Fabric works from 1.14 to 1.20.2
+### Forge works from 1.18.2 to 1.20.2
 
 ### Download the mod from Modrinth: https://modrinth.com/mod/euphoria-patches.
 ## The Installer Method
