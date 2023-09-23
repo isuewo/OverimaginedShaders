@@ -346,7 +346,7 @@ void main() {
 	    vec3 localPos = (gbufferModelViewInverse * vec4(viewPos, 1.0)).xyz;
 	    localPos.y = 0;
 	    float fragDistance = length(localPos);
-	    color.a *= 1.0 - smoothstep(DISTANT_HORIZONS_BLENDING_VIEW_DISTANCE_FACTOR * far, far, fragDistance);
+	    color.a = 1.0 - smoothstep(DISTANT_HORIZONS_BLENDING_VIEW_DISTANCE_FACTOR * far, far, fragDistance);
 	#endif
 
     /* DRAWBUFFERS:06 */
