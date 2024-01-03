@@ -14,6 +14,9 @@ You can get our addon from the official Complementary Installer or download the 
 ### Download instructions are below.
 
 # How To Install:
+<details><summary>Click to Expand</summary>
+<p>
+
 ## The Mod Method
 * 1) Get the required Complementary version and put it in the shaderpacks folder (**don't unzip or rename it**).
   * Currently Complementary r5.0.1 ([Reimagined](https://modrinth.com/shader/complementary-reimagined) or [Unbound](https://modrinth.com/shader/complementary-unbound))
@@ -33,6 +36,10 @@ You can get our addon from the official Complementary Installer or download the 
 * 4) Check the "Install Euphoria Patches" checkbox
 * 5) Click on install, Complementary Shaders + Euphoria Patches will now appear in your shaderpacks folder
 
+</p>
+</details>
+
+
 # FAQ
 <details><summary>Click to Expand</summary>
 <p>
@@ -44,7 +51,7 @@ Currently, you can only get this mod on the Complementary Discord. In the future
 ## When does Euphoria Patches update?
 We actually update the add-on with every dev release Emin releases on [Patreon](https://www.patreon.com/emingt), meaning that when he releases the public version, the add-on should come shortly after!
 
-# If any more questions arise, just ask in the [#euphoria-patches](https://discord.com/channels/744189556768636941/1005837848982847548) thread on the [Complementary Discord](https://discord.gg/ck5htDSQPv).
+# If any more questions arise, just ask in the [#euphoria-patches](https://discord.com/invite/985QQxVQZF) channnel on the Complementary Discord.
 
 </p>
 </details>
