@@ -161,7 +161,7 @@ float GetLinearDepth(float depth) {
             #include "/lib/atmospherics/stars.glsl"
         #endif
 
-        #ifdef VL_CLOUDS_ACTIVE 
+        #ifdef VL_CLOUDS_ACTIVE
             #include "/lib/atmospherics/clouds/mainClouds.glsl"
         #endif
     #endif
@@ -317,15 +317,15 @@ void main() {
     DoFog(color.rgb, sky, lViewPos, playerPos, VdotU, VdotS, dither);
     color.a *= 1.0 - sky;
 
-	#if DISTANT_HORIZONS_BLENDING == 1
-		// Distant Horizons water blending
-		vec3 localPos = (gbufferModelViewInverse * vec4(viewPos, 1.0)).xyz;
-		#if DISTANT_HORIZONS_BLENDING_RADIUS_TYPE == 0
-			localPos.y = 0.0;
-		#endif
-		float fragDistance = length(localPos);
-		color.a *= 1.0 - smoothstep(DISTANT_HORIZONS_BLENDING_VIEW_DISTANCE_FACTOR * far, far, fragDistance);
-	#endif
+    #if DISTANT_HORIZONS_BLENDING == 1
+        // Distant Horizons water blending
+        vec3 localPos = (gbufferModelViewInverse * vec4(viewPos, 1.0)).xyz;
+        #if DISTANT_HORIZONS_BLENDING_RADIUS_TYPE == 0
+            localPos.y = 0.0;
+        #endif
+        float fragDistance = length(localPos);
+        color.a *= 1.0 - smoothstep(DISTANT_HORIZONS_BLENDING_VIEW_DISTANCE_FACTOR * far, far, fragDistance);
+    #endif
 
     #ifndef LIGHT_COLORING
     /* DRAWBUFFERS:03 */

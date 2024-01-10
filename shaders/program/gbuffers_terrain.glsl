@@ -181,7 +181,7 @@ void main() {
         vec4 color = textureAF(tex, texCoord);
     #endif
 
-	if (color.a < (1.5/255.0)) {discard; return;}
+    if (color.a < (1.5/255.0)) {discard; return;}
 
     float smoothnessD = 0.0, materialMask = 0.0, skyLightFactor = 0.0;
     vec3 normalM = normal;
@@ -341,15 +341,15 @@ void main() {
         ColorCodeProgram(color);
     #endif
 
-	#if DISTANT_HORIZONS_BLENDING == 1
-	    // Distant Horizons blending
-	    vec3 localPos = (gbufferModelViewInverse * vec4(viewPos, 1.0)).xyz;
-		#if DISTANT_HORIZONS_BLENDING_RADIUS_TYPE == 0
-		    localPos.y = 0.0;
-		#endif
-	    float fragDistance = length(localPos);
-	    color.a = 1.0 - smoothstep(DISTANT_HORIZONS_BLENDING_VIEW_DISTANCE_FACTOR * far, far, fragDistance);
-	#endif
+    #if DISTANT_HORIZONS_BLENDING == 1
+        // Distant Horizons blending
+        vec3 localPos = (gbufferModelViewInverse * vec4(viewPos, 1.0)).xyz;
+        #if DISTANT_HORIZONS_BLENDING_RADIUS_TYPE == 0
+            localPos.y = 0.0;
+        #endif
+        float fragDistance = length(localPos);
+        color.a = 1.0 - smoothstep(DISTANT_HORIZONS_BLENDING_VIEW_DISTANCE_FACTOR * far, far, fragDistance);
+    #endif
 
     /* DRAWBUFFERS:06 */
     gl_FragData[0] = color;

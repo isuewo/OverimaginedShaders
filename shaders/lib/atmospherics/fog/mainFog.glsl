@@ -137,12 +137,12 @@
                 fogColorM *= moonPhaseInfluence;
             #endif
 
-	        #if DISTANT_HORIZONS_BLENDING == 1
+            #if DISTANT_HORIZONS_BLENDING == 1
                 // Distant horizons blending
                 vec3 localPos = (gbufferModelViewInverse * vec4(lViewPos)).xyz;
                 #if DISTANT_HORIZONS_BLENDING_RADIUS_TYPE == 0
-			        localPos.y = 0.0;
-		        #endif
+                    localPos.y = 0.0;
+                #endif
                 float fragDistance = length(localPos);
                 fog = mix(fog, 0.0, smoothstep(0.0 * far, far, fragDistance));
             #endif

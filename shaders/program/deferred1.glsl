@@ -322,17 +322,17 @@ void main() {
             }
         #endif
 
-		#if DISTANT_HORIZONS_BLENDING == 1
-			// Distant Horizons blending (SSAO)
-			vec3 localPos = (gbufferModelViewInverse * vec4(viewPos)).xyz;
-			#if DISTANT_HORIZONS_BLENDING_RADIUS_TYPE == 0
-				localPos.y = 0.0;
-			#endif
-			float fragDistance = length(localPos);
-			ssao = mix(ssao, 1.0, smoothstep(DISTANT_HORIZONS_BLENDING_VIEW_DISTANCE_FACTOR * far, far, fragDistance));
-		#endif
+        #if DISTANT_HORIZONS_BLENDING == 1
+            // Distant Horizons blending (SSAO)
+            vec3 localPos = (gbufferModelViewInverse * vec4(viewPos)).xyz;
+            #if DISTANT_HORIZONS_BLENDING_RADIUS_TYPE == 0
+                localPos.y = 0.0;
+            #endif
+            float fragDistance = length(localPos);
+            ssao = mix(ssao, 1.0, smoothstep(DISTANT_HORIZONS_BLENDING_VIEW_DISTANCE_FACTOR * far, far, fragDistance));
+        #endif
 
-		color.rgb *= ssao;
+        color.rgb *= ssao;
 
         #ifdef PBR_REFLECTIONS
             float skyLightFactor = texture6.b;
@@ -475,18 +475,18 @@ void main() {
             #endif
         #endif
         #ifdef NETHER
-			#if DISTANT_HORIZONS_BLENDING == 0
-	            color.rgb = netherColor;
-			#endif
+            #if DISTANT_HORIZONS_BLENDING == 0
+                color.rgb = netherColor;
+            #endif
 
             #ifdef ATM_COLOR_MULTS
                 color.rgb *= atmColorMult;
             #endif
         #endif
         #ifdef END
-			#if DISTANT_HORIZONS_BLENDING == 0
-	            color.rgb = endSkyColor;
-			#endif
+            #if DISTANT_HORIZONS_BLENDING == 0
+                color.rgb = endSkyColor;
+            #endif
             color.rgb += GetEnderStars(viewPos.xyz, VdotU);
 
             #ifdef ATM_COLOR_MULTS
