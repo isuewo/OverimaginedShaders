@@ -277,7 +277,7 @@ void main() {
     float maxDepth;
     #if SKYBOX_REFLECTIONS == 1
         maxDepth = 1.01;
-    #elif
+    #else
         maxDepth = 1.0;
     #endif
 
