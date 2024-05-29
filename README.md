@@ -9,9 +9,11 @@ Overimagined no longer exists! But don't worry, we have moved!
 # What is Euphoria Patches?
 Euphoria Patches is an add-on for Complementary Shaders (Reimagined and Unbound), developed by [SpacEagle17](https://github.com/SpacEagle17) and [isuewo](https://github.com/isuewo). It aims to extend Complementary with more optional features and settings. All Euphoria options are disabled by default and the user can decide what to enable.
 
-# Where can I get the Euphoria Patches add-on?
-You can get our addon from the official Complementary Installer or download the mod. <br>
-### Download instructions are below.
+# Links
+* **[<ins>Changelogs</ins>](https://github.com/EuphoriaPatches/Changelogs)** of Euphoria Patches!
+* **Discord:** **[<ins>#euphoria-patches</ins>](https://discord.com/invite/985QQxVQZF)** channel on the Complementary Discord or **[<ins>SpacEagle17</ins>](https://discord.gg/5N45SAsC3X)**'s Server for discussion, questions, suggestions...
+* Follow SpacEagle17 on **[<ins>Twitter/X</ins>](https://twitter.com/SpacEagle17)** to get news about the shaderpack
+* You can support SpacEagle17 on **[<ins>Ko-Fi</ins>](https://ko-fi.com/spaceagle17)** or **[<ins>Patreon</ins>](https://www.patreon.com/SpacEagle17)** and access development versions!
 
 # How To Install:
 <details><summary>Click to Expand</summary>
@@ -25,8 +27,8 @@ You can get our addon from the official Complementary Installer or download the 
 * 3) Launch the game with fabric/forge
 * 4) Complementary Shaders + Euphoria Patches will now appear in your shaderpacks folder
 
-### Fabric works from 1.14 to 1.20.4
-### Forge works from 1.18.2 to 1.20.4
+### Fabric works from 1.14 to 1.20.6
+### Forge works from 1.18.2 to 1.20.6
 
 ### Download the mod from Modrinth: https://modrinth.com/mod/euphoria-patches.
 ## The Installer Method
@@ -44,14 +46,12 @@ You can get our addon from the official Complementary Installer or download the 
 <details><summary>Click to Expand</summary>
 <p>
 
-## How can I get the Euphoria Patcher mod?
-Currently, you can only get this mod on the Complementary Discord. In the future, the mod will be made available on Modrinth. Further download instructions can be found in the pinned messages of the thread.
-## Why does Euphoria Patches need a mod?
-[Complementary's license](https://github.com/ComplementaryDevelopment/ComplementaryReimagined/blob/main/License.txt) does not allow us to publish our work as we do not have a "noticeably differen[ce] from the Original Pack in multiple common gameplay scenarios that must include daytime overworld visuals, regardless of the setting or variable changes in the Modified Pack and/or the Original Pack". We simply add onto Complementary so we obviously don't fall into the green zone. We have had many conversations about this topic with Emin and came to a mutual agreement to distribute it through a patcher where none of Emin's code gets distributed (and by that not breaking the license) and the user has to have Complementary Shaders installed in order to get our add-on. All parties profit from this method.
+### Why does Euphoria Patches need a mod?
+[<ins>Complementary's license</ins>](https://github.com/ComplementaryDevelopment/ComplementaryReimagined/blob/main/License.txt) does not allow us to publish our work as we do not have a "noticeably differen[ce] from the Original Pack in multiple common gameplay scenarios that must include daytime overworld visuals, regardless of the setting or variable changes in the Modified Pack and/or the Original Pack". We simply add onto Complementary so we obviously don't fall into the green zone. We have had many conversations about this topic with Emin and came to a mutual agreement to distribute it through a patcher where none of Emin's code gets distributed (and by that not breaking the license) and the user has to have Complementary Shaders installed in order to get our add-on. All parties profit from this method.
 ## When does Euphoria Patches update?
-We actually update the add-on with every dev release Emin releases on [Patreon](https://www.patreon.com/emingt), meaning that when he releases the public version, the add-on should come shortly after!
+Euphoria Patches Updates Immediately after a new Complementary Version is out. This includes dev versions. Euphoria Patches dev versions are available on **[Ko-Fi](https://ko-fi.com/spaceagle17)** or **[Patreon](https://www.patreon.com/SpacEagle17)**!
 
-# If any more questions arise, just ask in the [#euphoria-patches](https://discord.com/invite/985QQxVQZF) channnel on the Complementary Discord.
+### If any more questions arise, just ask in the [<ins>#euphoria-patches</ins>](https://discord.com/invite/985QQxVQZF) channel on the Complementary Discord.
 
 </p>
 </details>
