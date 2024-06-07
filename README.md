@@ -23,8 +23,8 @@ Euphoria Patches is an add-on for Complementary Shaders (Reimagined and Unbound)
 * 1) Get the required Complementary version and put it in the shaderpacks folder (**don't unzip or rename it**).
   * Currently Complementary r5.2.1 ([Reimagined](https://modrinth.com/shader/complementary-reimagined) or [Unbound](https://modrinth.com/shader/complementary-unbound))
 * 2) Get the latest [EuphoriaPatcher](https://modrinth.com/mod/euphoria-patches) mod file and put it in your mods folder
-  * Currently 0.3.2
-* 3) Launch the game with fabric/forge
+  * Currently 0.3.3
+* 3) Launch the game Fabric/Quilt/Forge/Neoforge
 * 4) Complementary Shaders + Euphoria Patches will now appear in your shaderpacks folder
 
 ### Fabric works from 1.14 to 1.20.6
